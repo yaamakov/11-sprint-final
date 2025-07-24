@@ -20,7 +20,7 @@ WORKDIR /app
 
 COPY --from=builder /app/main .
 
-COPY tracker.db .
+COPY --from=builder /app/tracker.db .
 
 RUN chown -R practicum:practicum /app
 
